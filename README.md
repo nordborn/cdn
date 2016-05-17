@@ -1,2 +1,2 @@
 # cdn
-np
+my cdn
