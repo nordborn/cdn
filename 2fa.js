@@ -1,4 +1,7 @@
-;function app2FAInit(app, appElId, customerIdVarName, fetchInterval) {
+;function app2FAInit(srvUrl, app, appElId, customerIdVarName, fetchInterval) {
+    // variables/fields received from API are under_scored
+    // variables created here are camelCased
+
     app.pageData = {
         // list of queries in format
         // {query_id: {query_id: str, question: str, answer: str, status: str}, ...}
@@ -35,7 +38,7 @@
 
             m.request({
                 method: "PUT",
-                url: "/q",
+                url: srvUrl + "/q",
                 timeout: 10000,
                 body: qClone,
             }).then(function (respObj) {
@@ -63,7 +66,7 @@
     app.fetchNewQueries = function () {
         m.request({
             method: "GET",
-            url: "/q/" + window[customerIdVarName] + "/new",
+            url: srvUrl + "/q/" + window[customerIdVarName] + "/new",
             timeout: 10000
         }).then(function (respObj) {
             console.debug('fetched new queries');
