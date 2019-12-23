@@ -38,7 +38,7 @@
 
             m.request({
                 method: "PUT",
-                url: srvUrl + "/q",
+                url: srvUrl + "/api/v1/q",
                 timeout: 10000,
                 body: qClone,
             }).then(function (respObj) {
@@ -66,7 +66,7 @@
     app.fetchNewQueries = function () {
         m.request({
             method: "GET",
-            url: srvUrl + "/q/" + window[customerIdVarName] + "/new",
+            url: srvUrl + "/api/v1/q/" + window[customerIdVarName] + "/new",
             timeout: 10000
         }).then(function (respObj) {
             console.debug('fetched new queries');
