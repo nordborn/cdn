@@ -3,7 +3,7 @@
     // variables created here are camelCased
 
     app.pageData = {
-        // list of queries in format
+        // dict of queries in format
         // {query_id: {query_id: str, question: str, answer: str, status: str}, ...}
         queries: {}
     };
@@ -105,9 +105,11 @@
                                     }, q.question)
                                 ]),
                                 m('div', [
+                                    // answer (token) input field
                                     m('input', {
                                         id: inpId,
-                                        class: 'field'
+                                        class: 'field',
+                                        placeholder: 'Token'
                                     })
                                 ]),
 
