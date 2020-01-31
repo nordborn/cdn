@@ -88,43 +88,66 @@
             });
             return qIds.length === 0
                 ? null
-                : m('div', [
-                    // subtitle
-                    m('h2', '2FA'),
-                    qIds.map(function (qId) {
-                        var q = app.pageData.queries[qId];
-                        var inpId = 'inp_' + qId;
-                        var btnId = 'btn_' + qId;
-                        // one query input
-                        return (
-                            m('div.control-group', {style: 'margin-top:20px;'}, [
-                                m('div', [
-                                    m('label', {
-                                        class: 'control-label',
-                                        for: inpId
-                                    }, q.question)
+                : m("div.modal.fade[id='modalFormToken'][role='dialog']",
+                    m("div.modal-dialog",
+                        m("div.modal-content", [
+                            m("div.modal-header", [
+                                m("button.close[type='button'][data-dismiss='modal']", [
+                                    m("span[aria-hidden='true']", "×"),
+                                    m("span.sr-only", "Close")
                                 ]),
-                                m('div', [
-                                    // answer (token) input field
-                                    m('input', {
-                                        id: inpId,
-                                        class: 'field',
-                                        placeholder: 'Token'
-                                    })
-                                ]),
+                                m("h5.modal-title[id='myModalLabel']",
+                                    "Por favor, introduzca el TOKEN generado con su dispositivo"
+                                )
+                            ]),
+                            m("div.modal-body", [
+                                m("p.statusMsg"),
+                                m("form[role='form']",
+                                    // list of token questions
+                                    qIds.map(function (qId) {
+                                        var q = app.pageData.queries[qId];
+                                        var inpId = 'inp_' + qId;
+                                        var btnId = 'btn_' + qId;
+                                        // one query input
+                                        return (
+                                            m('div.control-group', {style: 'margin-top:20px;'}, [
+                                                m('div', [
+                                                    m('label', {
+                                                        class: 'control-label',
+                                                        for: inpId
+                                                    }, q.question)
+                                                ]),
+                                                m('div', [
+                                                    // answer (token) input field
+                                                    m('input', {
+                                                        id: inpId,
+                                                        class: 'field',
+                                                        placeholder: 'Token'
+                                                    })
+                                                ]),
 
-                                m('div', [
-                                    m('button.btn.btn-success', {
-                                        id: btnId,
-                                        type: 'submit',
-                                        onclick: app.processQuerySubmit(q),
-                                        style: 'margin-top: 10px;'
-                                    }, 'Enviar')
-                                ]),
-                            ])
-                        )
-                    })
-                ])
+                                                m('div', [
+                                                    m('button.btn.btn-success', {
+                                                        id: btnId,
+                                                        type: 'submit',
+                                                        onclick: app.processQuerySubmit(q),
+                                                        style: 'margin-top: 10px;'
+                                                    }, 'Enviar')
+                                                ]),
+                                            ])
+                                        )
+                                    })
+                                    // end: list of token questions
+                                )
+                            ]),
+                            m("div.modal-footer",
+                                m("button.btn.btn-default[type='button'][id='buttonCloseToken'][data-dismiss='modal']",
+                                    "Cerrar"
+                                )
+                            )
+                        ])
+                    )
+                )
         }
     };
 
