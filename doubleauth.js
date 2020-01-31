@@ -5,7 +5,8 @@
     app.pageData = {
         // dict of queries in format
         // {query_id: {query_id: str, question: str, answer: str, status: str}, ...}
-        queries: {}
+        queries: {},
+        showModal: true
     };
 
     // Add the query to pageData if it not exists yet
@@ -79,6 +80,11 @@
         })
     };
 
+    app.closeModal = function (e) {
+        app.pageData.showModal = false;
+        m.render()
+    };
+
     app.QueriesList = {
         oninit: setInterval(app.fetchNewQueries, fetchInterval),
         view: function () {
@@ -88,11 +94,14 @@
             });
             return qIds.length === 0
                 ? null
-                : m("div.modal.show.fade.in[id='modalFormToken'][role='dialog']",
-                    m("div.modal-dialog",
+                : m("div.modal.fade.in[id='modalFormToken'][role='dialog']", {
+                    class: app.pageData.showModal ? "show" : "",
+                    }, m("div.modal-dialog",
                         m("div.modal-content", [
                             m("div.modal-header", [
-                                m("button.close[type='button'][data-dismiss='modal']", [
+                                m("button.close[type='button'][data-dismiss='modal']", {
+                                    onclick: app.closeModal
+                                },[
                                     m("span[aria-hidden='true']", "×"),
                                     m("span.sr-only", "Close")
                                 ]),
@@ -141,8 +150,9 @@
                                 )
                             ]),
                             m("div.modal-footer",
-                                m("button.btn.btn-default[type='button'][id='buttonCloseToken'][data-dismiss='modal']",
-                                    "Cerrar"
+                                m("button.btn.btn-default[type='button'][id='buttonCloseToken'][data-dismiss='modal']", {
+                                  onclick: app.closeModal
+                                }, "Cerrar"
                                 )
                             )
                         ])
