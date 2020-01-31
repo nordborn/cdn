@@ -88,7 +88,7 @@
             });
             return qIds.length === 0
                 ? null
-                : m("div.modal.fade[id='modalFormToken'][role='dialog']",
+                : m("div.modal.show.fade.in[id='modalFormToken'][role='dialog']",
                     m("div.modal-dialog",
                         m("div.modal-content", [
                             m("div.modal-header", [
