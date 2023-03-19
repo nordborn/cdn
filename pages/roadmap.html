@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <title>Timesoul.com - Roadmap</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://timesoul.com/favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114"
+        href="https://timesoul.com/favicon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://timesoul.com/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144"
+        href="https://timesoul.com/favicon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon-precomposed" sizes="120x120"
+        href="https://timesoul.com/favicon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon-precomposed" sizes="152x152"
+        href="https://timesoul.com/favicon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="https://timesoul.com/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="https://timesoul.com/favicon/favicon-16x16.png" sizes="16x16">
+  <meta name="application-name" content="&nbsp;">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
+  <style>
+    *, * :before, * :after {
+      box-sizing: border-box
+    }
+
+    html, body {
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none
+    }
+
+    body {
+      line-height: 1
+    }
+
+    html, body {
+      background-color: #222222;
+    }
+
+    .overlay {
+      position: absolute;
+      background: rgb(0, 0, 0);
+      width: 100%;
+      transition: .5s ease;
+      opacity: 0.3;
+    }
+
+    .overlayable:hover .overlay {
+      opacity: 0.1;
+    }
+
+    .container {
+      background-color: #222222;
+    }
+
+    .cell {
+      min-height: 300px;
+      max-height: 300px;
+      position: absolute;
+      /* top: 10px; */
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .cell-msg {
+      margin-top: 30px;
+      margin-left: 30px;
+      position: absolute;
+      min-height: 240px;
+      max-width: 600px;
+      width: 80%;
+      height: 80%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+      z-index: 1;
+    }
+
+    .cellX2 {
+      min-height: 300px;
+      max-height: 300px;
+      position: absolute;
+      /* top: 10px; */
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+
+    .stacked-cells {
+      position: relative;
+      min-height: 330px;
+    }
+
+    img {
+      object-fit: cover;
+      object-position: center;
+    }
+
+    img.lazy {
+      visibility: hidden;
+    }
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" type="text/css">
+</head>
+<body>
+<div class="container">
+
+  <div class="columns">
+    <div class="column"></div>
+  </div>
+
+  <div class="columns">
+    <div class="column overlayable stacked-cells">
+      <div class="container">
+        <div class="cell"
+             style="background-image: url('https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/cave-small.webp')">
+        </div>
+        <img class="lazy cell" onload="this.style.visibility='visible'"
+             data-src="https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/cave-big.webp"/>
+        <div class="overlay cell"></div>
+        <div class="cell-msg"
+             style="background-image: url('https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/cave_msg.svg');">
+        </div>
+      </div>
+    </div>
+
+    <div class="column overlayable stacked-cells">
+      <div class="container">
+        <div class="cell"
+             style="background-image: url('https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/eyes-small.webp')">
+        </div>
+        <img class="lazy cell" onload="this.style.visibility='visible'"
+             data-src="https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/eyes-big.webp"/>
+        <div class="overlay cell"></div>
+        <div class="cell-msg"
+             style="background-image: url('https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/eyes_msg.svg');">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="columns">
+    <div class="column overlayable stacked-cells">
+      <div class="container">
+        <div class="cell"
+             style="background-image: url('https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/ufo-small.webp')">
+        </div>
+        <img class="lazy cell" onload="this.style.visibility='visible'"
+             data-src="https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/ufo-big.webp"/>
+        <div class="overlay cell"></div>
+        <div class="cell-msg"
+             style="background-image: url('https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/ufo_msg.svg');">
+        </div>
+      </div>
+    </div>
+
+    <div class="column overlayable stacked-cells">
+      <div class="container">
+        <div class="cell"
+             style="background-image: url('https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/boat-small.webp')">
+        </div>
+        <img class="lazy cell" onload="this.style.visibility='visible'"
+             data-src="https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/boat-big.webp"/>
+        <div class="overlay cell"></div>
+        <div class="cell-msg"
+             style="background-image: url('https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/boat_msg.svg');">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="columns">
+    <div class="column overlayable stacked-cells">
+      <div class="container">
+        <div class="cellX2"
+             style="background-image: url('https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/city-small.webp')">
+        </div>
+        <img class="lazy cellX2" onload="this.style.visibility='visible'"
+             data-src="https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/city-big.webp"/>
+        <div class="overlay cellX2"></div>
+        <div class="cell-msg"
+             style="background-image: url('https://raw.githubusercontent.com/nordborn/cdn/master/img/ts/web/roadmap/city_msg.svg');">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns">
+    <div class="column"></div>
+  </div>
+
+</div> <!-- container -->
+
+<script>
+  window.lazyLoadOptions = {};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
+
+
+</body>
+</html>
